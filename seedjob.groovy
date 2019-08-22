@@ -13,8 +13,7 @@ job("data2") {
         disabled(false)
         concurrentBuild(true)
         steps {
-                shell("""echo \${data1}
-echo "This is working"
-echo \${data2}""")
-        }
+		shell("""echo "triggering from the machine"
+sh /var/lib/jenkins/workspace/data2/testshell.sh""")
+	}
 }
